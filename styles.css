@@ -7,7 +7,7 @@ header {
   min-height: 100%;
   text-align: center;
   color: #fff;
-  background-image: url(images/tiger_background_small.jpg);
+  background-image: url(https://cloud.githubusercontent.com/assets/16171992/12378770/05f6fcba-bd1b-11e5-8d21-49b7bf85ce95.jpg);
   background-position: center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -36,7 +36,7 @@ header .header-content .header-content-inner h1 {
   /* --- */
   header {
       min-height: 100%;
-      background-image: url(images/tiger_background.jpg)
+      background-image: url(https://cloud.githubusercontent.com/assets/16171992/12378768/fc56ea4e-bd1a-11e5-8078-ebf55bb69ad1.jpg)
 
   }
 
