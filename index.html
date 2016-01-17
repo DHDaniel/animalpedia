@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+
+  <!-- Ensures mobile functionality -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <!-- include libraries and css files -->
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/handlebars-v3.0.3.js"></script>
+
+  <script src="js/bootstrap.min.js"></script>
+  <script src="AnimalsData.js"></script>
+
+  <link href="css/bootstrap.css" type="text/css" rel="stylesheet"/>
+  <link href="styles.css" type="text/css" rel="stylesheet"/>
+
+  <!-- Title of site -->
+  <title>Animalpedia</title>
+
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <nav>
+      <div class="navbar-header"> <!-- navbar class for collapsed navbar -->
+        <!-- classes required for button to expand navbar. Uses built-in bootstrap.js -->
+        <button class="btn navbar-toggle collapsed"
+                type = "button"
+                data-toggle = "collapse"
+                data-target = "#home-navbar"
+                aria-expanded = "false"><span class="glyphicon glyphicon-menu-hamburger"></span></button>
+        <a href="index.html" class="navbar-brand">AnimalPedia</a>
+      </div> <!-- / collapsed navbar -->
+
+      <div class="collapse navbar-collapse" id="home-navbar"> <!-- navbar classes for uncollapsed navbar -->
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="categories.html">Categories</a></li>
+        </ul>
+      </div> <!-- / un collapsed navbar -->
+    </nav>
+  </div> <!-- / container fluid -->
+
+    <header>
+      <div class="header-content">
+        <div class="header-content-inner">
+          <h1>AnimalPedia</h1>
+          <hr>
+          <p>An extensive collection of information about different animals, put into different categories.</p>
+          <a href="categories.html"><button class="btn">Go to the Pedia</button></a>
+        </div>
+      </div>
+    </header>
+
+</body>
+</html>
