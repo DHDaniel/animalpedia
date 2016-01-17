@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Ensures mobile functionality -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <!-- include our libraries and css files -->
+
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/handlebars-v3.0.3.js"></script>
+
+  <script src="js/bootstrap.min.js"></script>
+  <script src="AnimalsData.js"></script>
+  <script src="script.js"></script>
+
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+
+  <!-- Title of site -->
+  <title>Categories</title>
+
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <div class="navbar-header"> <!-- navbar class for collapsed navbar -->
+      <!-- classes required for button to expand navbar. Uses built-in bootstrap.js -->
+      <button class="btn navbar-toggle collapsed"
+              type = "button"
+              data-toggle = "collapse"
+              data-target = "#home-navbar"
+              aria-expanded = "false"><span class="glyphicon glyphicon-menu-hamburger"></span></button>
+      <a href="index.html" class="navbar-brand">AnimalPedia</a>
+    </div> <!-- / collapsed navbar -->
+
+    <div class="collapse navbar-collapse" id="home-navbar"> <!-- navbar classes for uncollapsed navbar -->
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="categories.html">Categories</a></li>
+      </ul>
+    </div> <!-- / un collapsed navbar -->
+  </div> <!-- / container fluid -->
+
+  <div class="container-fluid">
+
+    <!-- Title of page -->
+    <h1 class="page-header">
+      Categories
+    </h1>
+
+    <!-- Breadcrumb navigation -->
+    <ol class="breadcrumb">
+      <li><a href="index.html">Home</a></li>
+      <li class="active">Categories</li>
+    </ol>
+
+  </div>
+
+  <!-- where templates will go in -->
+  <div id="navtabs-content">
+  </div>
+
+  <div id="categories-content">
+  </div>
+
+  <div id="animal-content">
+  </div>
+
+  <!-- Start of templates -->
+  <script id="navtabs-template" type="text/x-handlebars-template">
+    <div class="container-fluid">
+    <!-- search box -->
+    <div class="navbar-form navbar-right">
+      <div class="formgroup has-feedback">
+        <!-- Search input box -->
+        <input id="searchbox" type="text" class="form-control" placeholder="Search...">
+        <!-- Search icon -->
+        <span class="glyphicon glyphicon-search form-control-feedback"></span>
+      </div>
+    </div> <!-- / navbar form -->
+
+    <!-- Navbar tabs for categories -->
+      <ul class="nav nav-tabs">
+        {{#each category}}
+        <!-- @index records the index of the category in animals_data, so it can be accessed by the searchbox -->
+        <li class="navtab-item" id="{{name}}-tab" data-id="{{@index}}"><a class="navtab-item" href="#">{{name}}</a></li>
+        {{/each}}
+      </ul>
+    </div>
+
+  </script>
+
+  <script id="categories-template" type="text/x-handlebars-template">
+
+    <div class="container-fluid">
+      <!-- Where name of category will go -->
+      <h2>{{name}}</h2>
+      <div class="row">
+        <!-- Thumbnails for each animal -->
+        {{#each animals}}
+        <a href="#">
+          <div class="col-xs-6 col-md-3">
+            <div class="thumbnail" data-id="{{@index}}"> <!-- @index gets the current index of the animal being shown -->
+              <img class="thumbnail-image" src="{{image1}}"/>
+              <div class="caption">
+                <h3 class="thumbnail-title">{{name}}</h3>
+              </div> <!-- / caption -->
+            </div> <!-- / thumbnail -->
+          </div>
+        </a>
+        {{/each}}
+      </div> <!-- / row -->
+    </div>
+  </script>
+
+  <script id="animal-template" type="text/x-handlebars-template">
+    <div class="container-fluid">
+      <!-- Gets category name and animal name as subtext -->
+      <h2>{{name}} <small>{{animal.name}}</small></h2>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+            <img class="img-responsive" src="{{animal.image1}}" alt="Picture of {{animal.name}}"/>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+            <h3>{{animal.name}}</h3>
+            <p class="animal-description">{{animal.description}}</p>
+          </div>
+        </div> <!-- / row -->
+    </div>
+
+  </script>
+
+
+
+</body>
+</html>
