@@ -183,7 +183,7 @@ $(document).ready(function () {
       // error messages to show if nothing was found under the term
       if (filteredData.animals.length == 0) {
         // error message
-        $("#categories-content").html('<h1 class="text-center text-warning">There were no animals that matched "' + searchText + '"');
+        $("#categories-content").html('<h1 class="text-center text-warning">There were no animals that matched "' + searchText + '" in this category.');
       } else {
         // if content WAS found
         showTemplate(categoryTemplate, filteredData, "#categories-content");
