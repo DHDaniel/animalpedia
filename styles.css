@@ -71,3 +71,17 @@ h1, p {
   font-size: 1em !important;
   font-weight: lighter;
 }
+
+.footer {
+  padding: 10px;
+  opacity: 0.9;
+  font-size: 0.75em;
+}
+
+#home-footer {
+  background-color: black;
+}
+
+#categories-content {
+  min-height: 100%;
+}
